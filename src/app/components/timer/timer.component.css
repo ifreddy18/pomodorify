@@ -1,0 +1,140 @@
+.container {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+
+/* Cuerpo: Botones Countdown*/
+
+
+/* Cuerpo: Botones Countdown - Tipo de tiempo*/
+
+#type_time_button_block {
+    max-width: 600px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.type_time_button {
+    width: 140px;
+    height: 100%;
+    padding: 5px;
+    display: inline-block;
+    align-content: center;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    font-size: medium;
+    /*border: 2px solid white;*/
+    /* border-radius: 5px; */
+    /* background: #e8505b; */
+    background-color: grey;
+    color: white;
+}
+
+#work_time_button {
+    border-radius: 5px 0px 0px 5px;
+}
+
+#long_time_button {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.selected_button {
+    background: white;
+    color: #e8505b;
+    font-weight: bold;
+    font-size: medium;
+}
+
+
+/* Timer */
+
+#clock_block {
+    width: 480px;
+    height: 150px;
+    margin: auto;
+    /*background: green;*/
+}
+
+
+/* Cuerpo: Countdown*/
+
+#countdown_clock {
+    max-width: 100%;
+    height: 100%;
+    font-size: 120px;
+    /* 100px */
+    color: white;
+    /* #e4e3e3 */
+    /*padding-top: 5%;*/
+    text-align: center;
+    font-family: Arial;
+}
+
+
+/* Cuerpo: Botones Countdown - Start/Stop/Reset*/
+
+#button_block {
+    max-width: 400px;
+    height: 20%;
+    margin: auto;
+    text-align: center;
+}
+
+.clock_button {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: 3px solid white;
+    font-weight: bold;
+    background: #e8505b;
+    color: white;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+
+/* Efectos de botones*/
+
+.clock_button:hover,
+.type_time_button:hover,
+#settings_button:hover {
+    background: white;
+    color: #e8505b;
+}
+
+.clock_button:disabled,
+.type_time_button:disabled,
+#settings_button:disabled {
+    color: rgba(255, 255, 255, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    background: #e8505b;
+}
+
+.type_time_button:disabled {
+    border: none;
+}
+
+.selected_button:disabled {
+    background: rgba(255, 255, 255, 0.5);
+    color: #e8505b;
+    font-weight: bolder;
+}
