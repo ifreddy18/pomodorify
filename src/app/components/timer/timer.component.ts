@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountdownService, Preferences } from '../../services/countdown.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-timer',
@@ -8,7 +9,6 @@ import { CountdownService, Preferences } from '../../services/countdown.service'
 })
 export class TimerComponent implements OnInit {
 
-s
   displayTime = '00:00'; // Variable que muestra el tiempo
   TIMER: any; // Variable del setInterval
   minutes: number; // Minutos a mostrar
@@ -16,7 +16,10 @@ s
   preferences: Preferences; // Preferencias a utilizar para los tipos de tiempos
   typeTimeActived: string; // Indicador del tipo de tiempo utilizados
 
-  constructor(public countdownService: CountdownService) {
+  constructor(
+    public countdownService: CountdownService,
+    public notificationService: NotificationService
+  ) {
     this.preferences = this.countdownService.getPreferences();
     this.minutes = this.preferences.workTime;
     this.seconds = 0;
@@ -69,6 +72,8 @@ s
 
       if (this.seconds === 0 && this.minutes === 0){
         clearInterval(this.TIMER);
+        this.countdownService.countdownActived = false;
+        this.notificationService.playAlarm();
       }
 
     }, 1000);
@@ -78,8 +83,8 @@ s
   // Boton de stop
   stopCountdown(): void {
     console.log('Cuenta parada...');
-    this.countdownService.countdownActived = false;
     clearInterval(this.TIMER);
+    this.countdownService.countdownActived = false;
   }
 
   // Boton de Reset

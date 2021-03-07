@@ -7,7 +7,7 @@ import { NumberValueAccessor } from '@angular/forms';
 export class CountdownService {
 
   preferenciasDefault: Preferences = {
-    workTime: 25,
+    workTime: 1,
     shortBreakTime: 5,
     longBreakTime: 20,
     // autoShortBreak: false,
