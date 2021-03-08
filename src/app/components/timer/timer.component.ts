@@ -5,7 +5,12 @@ import { NotificationService } from '../../services/notification.service';
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.css']
+  styleUrls: ['./timer.component.css'],
+  styles: [`
+    .color_white_class {
+      [color]: colorWhite;
+    }
+  `]
 })
 export class TimerComponent implements OnInit {
 
@@ -15,6 +20,9 @@ export class TimerComponent implements OnInit {
   seconds: number; // Segundos a mostrar
   preferences: Preferences; // Preferencias a utilizar para los tipos de tiempos
   typeTimeActived: string; // Indicador del tipo de tiempo utilizados
+
+  colorWhite: string = 'white';
+  counter: number = 0;
 
   constructor(
     public countdownService: CountdownService,
@@ -74,9 +82,21 @@ export class TimerComponent implements OnInit {
         clearInterval(this.TIMER);
         this.countdownService.countdownActived = false;
         this.notificationService.playAlarm();
-      }
 
-    }, 1000);
+        if (this.typeTimeActived === 'work') {
+          this.counter++;
+        }
+
+        if (this.counter < 4 && this.typeTimeActived === 'work'){
+          this.setTypeTime('short');
+        } else if (this.counter < 4 && this.typeTimeActived === 'short'){
+          this.setTypeTime('work');
+        } else if (this.counter === 4){
+          this.setTypeTime('long');
+          this.counter = 0;
+        }
+      }
+    }, 1);
 
   }
 
@@ -91,8 +111,7 @@ export class TimerComponent implements OnInit {
   resetCountdown(): void {
     console.log('Cuenta reseteada...');
     clearInterval(this.TIMER);
-    this.minutes = 0;
-    this.seconds = 10;
+    this.setTypeTime(this.typeTimeActived);
     this.setDisplayTime();
   }
 

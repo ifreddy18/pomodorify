@@ -7,16 +7,15 @@ import { NumberValueAccessor } from '@angular/forms';
 export class CountdownService {
 
   preferenciasDefault: Preferences = {
-    workTime: 1,
+    workTime: 25,
     shortBreakTime: 5,
-    longBreakTime: 20,
+    longBreakTime: 10,
     // autoShortBreak: false,
     // displayAlarm: true
   };
 
   // Indica si el temporizador esta activo
   countdownActived = false;
-
 
   constructor() {
   }

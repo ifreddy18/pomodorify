@@ -1,26 +1,34 @@
 <div class="container">
     <!-- Botones de tiempos -->
-    <div id="type_time_button_block">
-        <button id="work_time_button" [ngClass]="{'selected_button': typeTimeActived === 'work'}" class="type_time_button" [disabled]="this.countdownService.countdownActived" (click)="setTypeTime('work')">
+    <div id="type_time_button_container">
+        <button [style.borderRadius]="'5px 0px 0px 5px'" [ngClass]="{'selected_button': typeTimeActived === 'work'}" class="type_time_button" [disabled]="this.countdownService.countdownActived" (click)="setTypeTime('work')">
 			Work
         </button>
-        <button id="short_time_button" [ngClass]="{'selected_button': typeTimeActived === 'short'}" class="type_time_button" [disabled]="this.countdownService.countdownActived" (click)="setTypeTime('short')"> 
+        <button [ngClass]="{'selected_button': typeTimeActived === 'short'}" class="type_time_button" [disabled]="this.countdownService.countdownActived" (click)="setTypeTime('short')"> 
             Short Break
         </button>
-        <button id="long_time_button" [ngClass]="{'selected_button': typeTimeActived === 'long'}" class="type_time_button" [disabled]="this.countdownService.countdownActived" (click)="setTypeTime('long')">
+        <button [style.borderRadius]="'0px 5px 5px 0px'" [ngClass]="{'selected_button': typeTimeActived === 'long'}" class="type_time_button" [disabled]="this.countdownService.countdownActived" (click)="setTypeTime('long')">
             Long Break
         </button>
     </div>
 
     <!-- Reloj -->
-    <div id="clock_block">
+    <div id="clock_container">
         <h2 id="countdown_clock">{{displayTime}}</h2>
     </div>
 
     <!-- Botones -->
-    <div id="button_block">
-        <button id="start_button" class="clock_button" (click)="startCountdown()" *ngIf="!this.countdownService.countdownActived">Start</button>
-        <button id="stop_button" class="clock_button" (click)="stopCountdown()" *ngIf="this.countdownService.countdownActived">Stop</button>
-        <button id="reset_button" class="clock_button" (click)="resetCountdown()" [disabled]="this.countdownService.countdownActived">Reset</button>
+    <div id="button_container">
+        <button class="clock_button" (click)="startCountdown()" *ngIf="!this.countdownService.countdownActived">Start</button>
+        <button class="clock_button" (click)="stopCountdown()" *ngIf="this.countdownService.countdownActived">Stop</button>
+        <button class="clock_button" (click)="resetCountdown()" [disabled]="this.countdownService.countdownActived">Reset</button>
+    </div>
+
+    <!-- Contadores -->
+    <div id="dot_container">
+        <span [ngClass]="{'dot_green': counter > 0}" class="dot"></span>
+        <span [ngClass]="{'dot_green': counter > 1}" class="dot"></span>
+        <span [ngClass]="{'dot_green': counter > 2}" class="dot"></span>
+        <span [ngClass]="{'dot_green': counter > 3}" class="dot"></span>
     </div>
 </div>

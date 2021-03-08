@@ -7,5 +7,16 @@
 
 body {
     background: #e8505b;
+    /* background-color: #212121; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bg-color-primary {
+    /* Warm grey */
+    background-color: #212121;
+}
+
+:root {
+    --dark-grey: #212121;
+    --grey: #7e7e7e;
 }
