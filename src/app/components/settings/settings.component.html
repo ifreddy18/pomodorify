@@ -1,15 +1,57 @@
-<h2>Settings</h2>
+<form class="form_container" [formGroup]="forma" (ngSubmit)="saveSettings()">
+    <div class="form_title">
+        <h2>Settings</h2>
+        <hr>
+    </div>
 
-<hr>
+    <div class="form_group">
+        <label class="label_input">Work Time <small>(minutes)</small></label>
+        
+        <input type="number" 
+            placeholder="Minutes"
+            formControlName="workTime">
+    </div>
+    <small class="invalid" *ngIf="workTimeInvalid">Time must be at least 1 minute</small>
+    
+    <div class="clear_fix"></div>
 
-<p [style.alpha]="'0.5'">
-    <label>Work Time <input type="number" [placeholder]="preferences.workTime"></label><br>
-    <label>Short Break Time <input type="number" [placeholder]="preferences.shortBreakTime"></label><br>
-    <label>Long Break Time <input type="number" [placeholder]="preferences.longBreakTime"></label><br>
-</p>
+    <div class="form_group">
+        <label class="label_input">Short Break Time <small>(minutes)</small></label>
+        <input type="number" 
+            placeholder="Minutes"
+            formControlName="shortBreakTime">
+    </div>
+    <small class="invalid" *ngIf="shortBreakTimeInvalid">Time must be at least 1 minute</small>
 
-<p>
-    <button>Back</button>
-    <button>Reset</button>
-    <button>Save</button>
-</p>
+    <div class="clear_fix"></div>
+
+    <div class="form_group">
+        <label class="label_input">Long Break Time <small>(minutes)</small></label>
+        <input type="number" 
+            placeholder="Minutes"
+            formControlName="longBreakTime">
+    </div>
+    <small class="invalid" *ngIf="longBreakTimeInvalid">Time must be at least 1 minute</small>
+
+    <!-- <hr>
+
+    <div class="form_group">
+        <label class="label_input">Long Break Time <small>(minutes)</small></label>
+        <input type="number" 
+            placeholder="Minutes"
+            formControlName="longBreakTime">
+    </div>
+
+    <hr>
+
+    <div class="form_group">
+        <label class="label_input">Activate alarm</label>
+        <input type="checkbox" formControlName="alarmState">
+    </div> -->
+
+    <div class="button_container">
+        <button type="button" (click)="back()">Back</button>
+        <button type="button" (click)="resetSettings()">Reset</button>
+        <button type="submit">Save</button>
+    </div>
+</form>

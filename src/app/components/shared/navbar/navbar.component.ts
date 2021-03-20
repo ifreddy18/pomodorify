@@ -8,9 +8,9 @@ import { CountdownService } from '../../../services/countdown.service';
       <h1>Pomodorify</h1>
 
       <ul>
-          <li>
+          <!-- <li>
               <a routerLinkActive="linkActive" [routerLink]="['home']">Timer</a>
-          </li>
+          </li> -->
           <li>
               <a routerLinkActive="linkActive"
                 [routerLink]="['settings']"

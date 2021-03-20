@@ -11,6 +11,18 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.clear_fix{
+    clear: both;
+    float: none;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+}
+
 .bg-color-primary {
     /* Warm grey */
     background-color: #212121;
@@ -20,3 +32,37 @@ body {
     --dark-grey: #212121;
     --grey: #7e7e7e;
 }
+
+button {
+    outline: none;
+}
+
+
+/* Quiar flechas input */
+
+/* //Chrome: */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+outline: none;
+}
+/* //Firefox: */
+input[type="number"] {
+-moz-appearance: textfield;
+outline: none;
+text-align: center;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+-moz-appearance: number-input;
+outline: none;
+}
+/* //Other */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+outline: none;
+}
+
