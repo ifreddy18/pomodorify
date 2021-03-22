@@ -1,21 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 
-* {
-    list-style: none;
-    margin: 0px;
+.bg-custom-dark-1 {
+    background-color: #292A2D;
 }
 
-body {
+.bg-custom-dark-2 {
+    background-color: #35363A;
+}
+
+/* * {
+    list-style: none;
+    margin: 0px;
+} */
+
+/* body {
     /* background: #e8505b; */
     /* background-color: #212121; */
     /* color-one-dark */
     /* background-color: #222824;  */
     /* color-two-dark*/
-    background-color: #2B3634; 
+    /* background-color: #2B3634; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+} */ 
 
-.clear_fix{
+/* .clear_fix{
     clear: both;
     float: none;
 }
@@ -25,7 +33,7 @@ body {
     text-align: center;
     margin: auto;
     margin-top: 40px;
-}
+} */
 
 /* .bg-color-one-dark{
     background-color: #222824;
@@ -72,27 +80,27 @@ body {
     color: #2E362B;
 } */
 
-:root {
+/* :root {
     --dark-grey: #212121;
     --grey: #7e7e7e;
 }
 
 button {
     outline: none;
-}
+} */
 
 
 /* Quiar flechas input */
 
 /* //Chrome: */
-input[type="number"]::-webkit-outer-spin-button,
+/* input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
 -webkit-appearance: none;
 margin: 0;
 outline: none;
-}
+} */
 /* //Firefox: */
-input[type="number"] {
+/* input[type="number"] {
 -moz-appearance: textfield;
 outline: none;
 text-align: center;
@@ -101,12 +109,12 @@ input[type="number"]:hover,
 input[type="number"]:focus {
 -moz-appearance: number-input;
 outline: none;
-}
+} */
 /* //Other */
-input[type=number]::-webkit-inner-spin-button,
+/* input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
 -webkit-appearance: none;
 margin: 0;
 outline: none;
-}
+} */
 

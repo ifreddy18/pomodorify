@@ -22,7 +22,8 @@ export class TimerComponent implements OnInit {
   typeTimeActived: string; // Indicador del tipo de tiempo utilizados
 
   colorWhite: string = 'white';
-  counter: number = 0;
+  pomodoros: number = 0;
+  setOfPomodoros: number = 0;
 
   constructor(
     public countdownService: CountdownService,
@@ -84,19 +85,23 @@ export class TimerComponent implements OnInit {
         this.notificationService.playAlarm();
 
         if (this.typeTimeActived === 'work') {
-          this.counter++;
+          this.pomodoros++;
         }
 
-        if (this.counter < 4 && this.typeTimeActived === 'work'){
-          this.setTypeTime('short');
-        } else if (this.counter < 4 && this.typeTimeActived === 'short'){
-          this.setTypeTime('work');
-        } else if (this.counter === 4){
+        if (this.typeTimeActived === 'work' && this.pomodoros % 4 === 0) {
           this.setTypeTime('long');
-          this.counter = 0;
+
+          this.setOfPomodoros++;
+
+        } else if (this.typeTimeActived === 'work'){
+          this.setTypeTime('short');
+        } else if (this.typeTimeActived === 'short' || this.typeTimeActived === 'long'){
+          this.setTypeTime('work');
         }
+
+        console.warn('Pomodoros: ' + this.pomodoros);
       }
-    }, 1);
+    }, 1000);
 
   }
 
