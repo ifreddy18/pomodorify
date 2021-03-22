@@ -1,6 +1,6 @@
-<div class="container">
+<!-- <div class="container"> -->
     <!-- Botones de tiempos -->
-    <div id="type_time_button_container">
+    <!-- <div id="type_time_button_container">
         <button [style.borderRadius]="'5px 0px 0px 5px'" [ngClass]="{'selected_button': typeTimeActived === 'work'}" class="type_time_button" [disabled]="this.countdownService.countdownActived" (click)="setTypeTime('work')">
 			Work
         </button>
@@ -10,25 +10,120 @@
         <button [style.borderRadius]="'0px 5px 5px 0px'" [ngClass]="{'selected_button': typeTimeActived === 'long'}" class="type_time_button" [disabled]="this.countdownService.countdownActived" (click)="setTypeTime('long')">
             Long Break
         </button>
+    </div> -->
+
+    <!-- Reloj -->
+    <!-- <div id="clock_container">
+        <h2 id="countdown_clock">{{displayTime}}</h2>
+    </div> -->
+
+    <!-- Botones -->
+    <!-- <div id="button_container">
+        <button (click)="startCountdown()" *ngIf="!this.countdownService.countdownActived">Start</button>
+        <button (click)="stopCountdown()" *ngIf="this.countdownService.countdownActived">Stop</button>
+        <button (click)="resetCountdown()" [disabled]="this.countdownService.countdownActived">Reset</button>
+    </div> -->
+
+    <!-- Contadores -->
+    <!-- <div id="dot_container">
+        <span [ngClass]="{'dot_green': pomodoros > 0}" class="dot"></span>
+        <span [ngClass]="{'dot_green': pomodoros > 1}" class="dot"></span>
+        <span [ngClass]="{'dot_green': pomodoros > 2}" class="dot"></span>
+        <span [ngClass]="{'dot_green': pomodoros > 3}" class="dot"></span>
+    </div>
+</div> -->
+
+
+<div class="container text-center mt-4 w-50 animate__animated animate__fadeIn">
+    <!-- Botones de tiempos -->
+    <div class="btn-group btn-group-lg w-75 row row-cols-3 shadow-sm">
+        <button class="col btn" 
+                [ngClass]="{
+                    'active btn-primary': typeTimeActived === 'work',
+                    'btn-secondary': typeTimeActived !== 'work',
+                    'disabled': this.countdownService.countdownActived
+                }"
+                (click)="setTypeTime('work')">
+			Work
+        </button>
+        <!-- [disabled]="this.countdownService.countdownActived" -->
+        <button class="col btn" 
+                [ngClass]="{
+                    'active btn-primary': typeTimeActived === 'short',
+                    'btn-secondary': typeTimeActived !== 'short',
+                    'disabled': this.countdownService.countdownActived
+                }"
+                (click)="setTypeTime('short')"> 
+                Short Break
+        </button>
+        <button class="col btn" 
+                [ngClass]="{
+                    'active btn-primary': typeTimeActived === 'long',
+                    'btn-secondary': typeTimeActived !== 'long',
+                    'disabled': this.countdownService.countdownActived
+                }" 
+                (click)="setTypeTime('long')">
+            Long Break
+        </button>
     </div>
 
     <!-- Reloj -->
-    <div id="clock_container">
-        <h2 id="countdown_clock">{{displayTime}}</h2>
+    <div class="container">
+        <h2 style="font-size: 120px; text-shadow: 0px 5px 10px rgba(55, 55, 55, 0.5) !important;"
+            class="text-light fw-bold m-4">
+            {{ displayTime }}
+        </h2>
     </div>
 
     <!-- Botones -->
-    <div id="button_container">
-        <button class="clock_button" (click)="startCountdown()" *ngIf="!this.countdownService.countdownActived">Start</button>
-        <button class="clock_button" (click)="stopCountdown()" *ngIf="this.countdownService.countdownActived">Stop</button>
-        <button class="clock_button" (click)="resetCountdown()" [disabled]="this.countdownService.countdownActived">Reset</button>
+    <div class="container text-center">
+        <button class="w-25 m-2 shadow btn btn-success" 
+                (click)="startCountdown()" 
+                *ngIf="!this.countdownService.countdownActived">Start</button>
+        <button class="w-25 m-2 shadow btn btn-danger" 
+                (click)="stopCountdown()" 
+                *ngIf="this.countdownService.countdownActived">Stop</button>
+        <button class="w-25 m-2 shadow btn btn-secondary" 
+                (click)="resetCountdown()" 
+                [disabled]="this.countdownService.countdownActived">Reset</button>
     </div>
 
     <!-- Contadores -->
-    <div id="dot_container">
-        <span [ngClass]="{'dot_green': counter > 0}" class="dot"></span>
-        <span [ngClass]="{'dot_green': counter > 1}" class="dot"></span>
-        <span [ngClass]="{'dot_green': counter > 2}" class="dot"></span>
-        <span [ngClass]="{'dot_green': counter > 3}" class="dot"></span>
+    <div class="container mt-3">
+        <span class="dot rounded-circle bg-secondary"
+                [ngClass]="{'bg-success': pomodoros > 0}">
+        </span>
+        <span class="dot rounded-circle bg-secondary"
+                [ngClass]="{'bg-success': pomodoros > 1}">
+        </span>
+        <span class="dot rounded-circle bg-secondary" 
+                [ngClass]="{'bg-success': pomodoros > 2}">
+        </span>
+        <span class="dot rounded-circle bg-secondary" 
+                [ngClass]="{'bg-success': pomodoros > 3}">
+        </span>
+
+        <span class="m-3"></span>
+
+        <span class="dot rounded-circle bg-secondary"
+                [ngClass]="{'bg-success': pomodoros > 4}">
+        </span>
+        <span class="dot rounded-circle bg-secondary"
+                [ngClass]="{'bg-success': pomodoros > 5}">
+        </span>
+        <span class="dot rounded-circle bg-secondary" 
+                [ngClass]="{'bg-success': pomodoros > 6}">
+        </span>
+        <span class="dot rounded-circle bg-secondary" 
+                [ngClass]="{'bg-success': pomodoros > 7}">
+        </span>
     </div>
+
+    <div class="bg-dark p-2 m-2 rounded w-25 text-center m-auto">
+        <span class="text-light fs-6">
+            Set of pomodoros: {{ setOfPomodoros }}
+        </span>
+    </div>
+    
+
 </div>

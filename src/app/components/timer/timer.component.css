@@ -1,4 +1,4 @@
-button:focus {
+/* button:focus {
     outline: none;
 }
 
@@ -9,7 +9,7 @@ button:disabled {
 button:hover {
     background: white;
     color: #e8505b;
-}
+} */
 
 
 /* Cuerpo: Botones Countdown*/
@@ -17,7 +17,7 @@ button:hover {
 
 /* Cuerpo: Botones Countdown - Tipo de tiempo*/
 
-#type_time_button_container {
+/* #type_time_button_container {
     max-width: 420px;
     height: 35px;
     margin-top: 10px;
@@ -47,21 +47,21 @@ button:hover {
     color: #e8505b;
     font-weight: bold;
     font-size: medium;
-}
+} */
 
 
 /* Timer */
 
-#clock_container {
+/* #clock_container {
     width: 480px;
     height: 150px;
     margin: auto;
-}
+} */
 
 
 /* Cuerpo: Countdown*/
 
-#countdown_clock {
+/* #countdown_clock {
     max-width: 100%;
     height: 100%;
     font-size: 120px;
@@ -70,12 +70,12 @@ button:hover {
     font-family: Arial;
     margin-top: 20px;
     text-shadow: 0px 5px 10px rgba(55, 55, 55, 0.5);
-}
+} */
 
 
 /* Cuerpo: Botones Countdown - Start/Stop/Reset*/
 
-#button_container {
+/* #button_container {
     max-width: 400px;
     height: 20%;
     margin: auto;
@@ -97,12 +97,12 @@ button:hover {
     border-radius: 10px;
     font-size: medium;
     box-shadow: 0px 5px 10px rgba(55, 55, 55, 0.5), 0px 1px 3px rgba(55, 55, 55, 0.5) inset;
-}
+} */
 
 
 /* Efectos de botones*/
 
-.clock_button:disabled,
+/* .clock_button:disabled,
 .type_time_button:disabled {
     color: rgba(255, 255, 255, 0.5);
     border: 3px solid rgba(255, 255, 255, 0.5);
@@ -117,24 +117,21 @@ button:hover {
     background: rgba(255, 255, 255, 0.5);
     color: #e8505b;
     font-weight: bolder;
-}
+} */
 
 
 /* Contadores */
 
-.dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: lightgray;
+ .dot {
+    width: 25px;
+    height: 25px;
     display: inline-block;
     margin: 5px;
-    /* border: 2px dashed black; */
-    box-shadow: 0px 1px 3px rgba(55, 55, 55, 0.5) inset;
-    /* box-shadow: 0px 5px 10px rgba(55, 55, 55, 0.5), 0px 1px 3px rgba(55, 55, 55, 0.5) inset; */
+    box-shadow: 0px 2px 4px rgba(55, 55, 55, 0.5) inset;
 }
 
-.dot_green {
-    background-color: rgb(130, 236, 130);
-    box-shadow: 0px 0px 2px 3px rgba(130, 236, 130, 0.5);
-}
+/* 
+
+.dot_active {
+    box-shadow: 0px 0px 20px rgba(18, 110, 10, 0.5);
+} */

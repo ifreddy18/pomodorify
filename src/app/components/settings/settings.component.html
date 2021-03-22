@@ -1,11 +1,11 @@
-<form class="form_container" [formGroup]="forma" (ngSubmit)="saveSettings()">
+<!-- <form class="form_container" [formGroup]="forma" (ngSubmit)="saveSettings()">
     <div class="form_title">
         <h2>Settings</h2>
-        <hr>
+        
     </div>
 
-    <div class="form_group">
-        <label class="label_input">Work Time <small>(minutes)</small></label>
+    <div class="">
+        <label class="">Work Time <small>(minutes)</small></label>
         
         <input type="number" 
             placeholder="Minutes"
@@ -15,8 +15,8 @@
     
     <div class="clear_fix"></div>
 
-    <div class="form_group">
-        <label class="label_input">Short Break Time <small>(minutes)</small></label>
+    <div class="">
+        <label class="">Short Break Time <small>(minutes)</small></label>
         <input type="number" 
             placeholder="Minutes"
             formControlName="shortBreakTime">
@@ -25,18 +25,18 @@
 
     <div class="clear_fix"></div>
 
-    <div class="form_group">
-        <label class="label_input">Long Break Time <small>(minutes)</small></label>
+    <div class="">
+        <label class="">Long Break Time <small>(minutes)</small></label>
         <input type="number" 
             placeholder="Minutes"
             formControlName="longBreakTime">
     </div>
-    <small class="invalid" *ngIf="longBreakTimeInvalid">Time must be at least 1 minute</small>
+    <small class="invalid" *ngIf="longBreakTimeInvalid">Time must be at least 1 minute</small> -->
 
     <!-- <hr>
 
-    <div class="form_group">
-        <label class="label_input">Long Break Time <small>(minutes)</small></label>
+    <div class="">
+        <label class="">Long Break Time <small>(minutes)</small></label>
         <input type="number" 
             placeholder="Minutes"
             formControlName="longBreakTime">
@@ -44,14 +44,83 @@
 
     <hr>
 
-    <div class="form_group">
-        <label class="label_input">Activate alarm</label>
+    <div class="">
+        <label class="">Activate alarm</label>
         <input type="checkbox" formControlName="alarmState">
     </div> -->
 
-    <div class="button_container">
+    <!-- <div class="button_container">
         <button type="button" (click)="back()">Back</button>
         <button type="button" (click)="resetSettings()">Reset</button>
         <button type="submit">Save</button>
     </div>
+</form> -->
+
+
+<form class="container mt-4 text-center shadow rounded-3 bg-custom-dark-1 animate__animated animate__fadeIn"
+    style="width: 500px;"
+    [formGroup]="forma" 
+    (ngSubmit)="saveSettings()">
+    
+    <div class="pt-4 pb-2">
+        <h2 class="text-light">Settings</h2>
+    </div>
+    
+    <hr>
+
+    <div class="row justify-content-center p-1">
+    
+        <label class="col p-2 fs-5 text-light">Work Time <small>(minutes)</small></label><br>
+        
+        <div class="col input-group">
+            <input class="form-control text-center fs-5" 
+            type="number" 
+            placeholder="Minutes"
+            formControlName="workTime">
+            <span class="input-group-text">minutes</span>
+        </div>
+        
+    </div>
+    <small class="text-danger" *ngIf="workTimeInvalid">Time must be at least 1 minute</small>
+ 
+    
+    <div class="row justify-content-center p-1">
+    
+        <label class="col p-2 fs-5 text-light">Short break time <small>(minutes)</small></label><br>
+        
+        <div class="col input-group">
+            <input class="form-control text-center fs-5" 
+            type="number" 
+            placeholder="Minutes"
+            formControlName="shortBreakTime">
+            <span class="input-group-text">minutes</span>
+        </div>
+        
+    </div>
+    <small class="text-danger" *ngIf="shortBreakTimeInvalid">Time must be at least 1 minute</small>
+    
+    
+    <div class="row justify-content-center p-1">
+    
+        <label class="col p-2 fs-5 text-light">Long break time <small>(minutes)</small></label><br>
+        
+        <div class="col input-group">
+            <input class="form-control text-center fs-5" 
+            type="number" 
+            placeholder="Minutes"
+            formControlName="longBreakTime">
+            <span class="input-group-text">minutes</span>
+        </div>
+        
+    </div>
+    <small class="text-danger" *ngIf="longBreakTimeInvalid">Time must be at least 1 minute</small>
+    
+    <hr>
+
+    <div class="button_container mt-3 mb-3 pb-3">
+        <button class="btn btn-danger m-2 w-25" type="button" (click)="back()">Back</button>
+        <button class="btn btn-secondary m-2 w-25" type="button" (click)="resetSettings()">Reset</button>
+        <button class="btn btn-primary m-2 w-25" type="submit">Save</button>
+    </div>
 </form>
+

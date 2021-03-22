@@ -37,7 +37,7 @@ export class SettingsComponent implements OnInit {
     return this.forma.get('longBreakTime').invalid && this.forma.get('longBreakTime').touched;
   }
 
-  crearFormulario(){
+  crearFormulario(): void{
     this.forma = this.fb.group({
       workTime: [this.preferences.workTime, [Validators.required, Validators.min(1)]],
       shortBreakTime: [this.preferences.shortBreakTime, [Validators.required, Validators.min(1)]],
